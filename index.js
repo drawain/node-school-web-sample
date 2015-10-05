@@ -8,6 +8,11 @@ var images = [
   'http://media2.giphy.com/media/9kwYb954sUMx2/200.gif'
 ];
 
+app.use(function(req, res, next) {
+  console.log(`[${new Date()}] REQUEST method="${req.method}" url="${req.url}"`);
+  next();
+});
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
